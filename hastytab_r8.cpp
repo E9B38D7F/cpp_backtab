@@ -631,15 +631,18 @@ void multi_runs(
 }
 
 
-int main() {
+int main(int argc, char* argv[]) {
     srand(time(nullptr));
     // Configurable bits
-    std::string directory {"old_data/2022"};
-    std::string r7_filename {"hastytab_output_nobread.csv"};
+    std::string directory {argv[1]}; // Where the files are
+    std::string r7_filename {argv[2]}; // Where the r7 backtab output is
+    std::string filename {argv[3]}; // Where to put the output
+    // std::string directory {"old_data/2022"};
+    // std::string r7_filename {"hastytab_output_nobread.csv"};
+    // std::string filename {"hastytab_output_nobread_r8.csv"};
     int r7_iterations {20};
     int r8_iterations {50};
     int runs {100};
-    std::string filename {"hastytab_output_nobread_r8.csv"};
 
     // Now run the program
     std::map<std::string, Team> teams;
